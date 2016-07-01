@@ -1,0 +1,70 @@
+/**
+ *  If you want to override some foundation settings, you have to change values here.
+ *  The list of settings values are listed here bower_components/foundation/scss/foundation/_settings.scss
+ */
+
+$body-background: #00aebd;
+
+/**
+ *  The import of foundation is made manually because there is still no links of the
+ *  sass version in their bower.json...
+ */
+
+@import '../../bower_components/foundation-sites/scss/foundation';
+@include foundation-everything;
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+
+// bower:scss
+// endbower
+html,
+body {
+    font-size: 14px;
+    background: #00aebc;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #00aebc 0%, #00a8b9 37%, #00a8b6 76%, #00aebd 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #00aebc 0%, #00a8b9 37%, #00a8b6 76%, #00aebd 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #00aebc 0%, #00a8b9 37%, #00a8b6 76%, #00aebd 100%);
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.font-preview-container {
+    margin: 20px auto;
+    .font-preview-box {
+        background: #fff;
+        text-align: center;
+        font-size: 2.5em;
+        padding: 50px;
+        font-weight: bold;
+    }
+}
+
+.loading-text {
+    margin-top: 1em;
+}
+
+.error-text {
+    margin-top: 1em;
+    color: red;
+}
+
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+
+// injector
+// endinjector

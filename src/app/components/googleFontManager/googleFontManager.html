@@ -1,0 +1,23 @@
+<div class="google-font-manager">
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="drop-container">
+                <div class="drop-box-head" ng-click="showList()">
+                    {{placeHolderValue}}
+                </div>
+                <div class="drop-box-list" ng-show="showListItems">
+                    <div class = "search-bar">
+                        <input type="text" placeholder="Search font" ng-model="searchText">
+                    </div>
+                    <div class="font-list-container">
+                        <ul class="font-list">
+                            <li ng-repeat="item in fontItemList | filter:searchText" ng-click="selectFont(item, $index)" ng-class="{'active-font': selected === $index}">
+                                {{item.family}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
