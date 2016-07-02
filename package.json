@@ -5,6 +5,9 @@
   "scripts": {
     "test": "gulp test"
   },
+  "scripts": {
+    "postinstall": "bower install"
+  },
   "devDependencies": {
     "estraverse": "~4.1.0",
     "gulp": "~3.9.0",
