@@ -1,5 +1,5 @@
 # Google Font Manager in AngularJS with Lazy Loading Fonts
-Simple AngularJS directive to preview all available google fonts.
+Simple AngularJs Directive to easily add Google fonts to your website.
 
 #Usage
 1. Run "npm install" 
