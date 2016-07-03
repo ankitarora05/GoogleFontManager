@@ -6,7 +6,7 @@
     "test": "gulp test"
   },
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "bower install && gulp"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
