@@ -11,8 +11,10 @@
                     </div>
                     <div class="font-list-container">
                         <ul class="font-list">
-                            <li ng-repeat="item in fontItemList | filter:searchText" ng-click="selectFont(item, $index)" ng-class="{'active-font': selected === $index}">
-                                {{item.family}}
+                            <li ng-repeat="item in fontItemList | filter:searchText">
+                                <div ng-repeat="varient in item.variants" ng-class="{'active-font': selected === (item.family + ',' + varient)}" ng-click="selectFont(item, varient)">
+                                    {{item.family + ',' + varient}}
+                                </div> 
                             </li>
                         </ul>
                     </div>

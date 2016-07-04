@@ -6,9 +6,9 @@
 </div>
 <div class="row" ng-if="main.isDataAvailable && !main.showOnError">
     <div class="large-4 columns">
-        <google-font-manager-directive info="main.fontData.fontDataArray" applied-family="main.fontData.fontFamily"></google-font-manager-directive>
+        <google-font-manager-directive info="main.fontData" applied-family="" applied-weight="" applied-style=""></google-font-manager-directive>
     </div>
-    <div class="large-8 columns" ng-style="{'font-family': main.fontData.fontFamily}">
+    <div class="large-8 columns" ng-style="main.getStyle(main.fontData)">
         <div class="font-preview-container">
             <div class="font-preview-box">
             	Sample Preview Text

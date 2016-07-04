@@ -8,25 +8,36 @@
         function link(scope, elem) {
             scope.showListItems = false;
             scope.isPlaceholder = true;
-            scope.fontItemList = scope.data;
+            scope.fontItemList = scope.info.fontDataArray;
             scope.searchText = "";
             scope.placeHolderValue = "Select a google font for preview";
             scope.showList = function() {
                 scope.showListItems = !scope.showListItems;
             }
-            scope.selectFont = function(obj, index) {
-                scope.selected = index;
+            scope.calculateVarient = function(varient) {
+                if(varient === 'regular') {
+                    scope.info.fontStyle = 'normal';
+                } else if(varient === 'italic') {
+                    scope.info.fontStyle = 'italic';
+                } else {
+                    scope.info.fontWeight = varient;
+                }
+                return;
+            }
+            scope.selectFont = function(obj, varient) {
+                scope.selected = obj.family + ',' + varient;
                 scope.placeHolderValue = obj.family;
                 WebFont.load({ // eslint-disable-line no-undef
                     google: {
                         families: [obj.family]
                     },
-                    urls: [obj.files.regular],
+                    urls: [obj.files[varient]],
                     loading: function() {},
                     active: function() {
-                        sessionStorage.fonts = true;
+                        //sessionStorage.fonts = true;
                         safeApply(scope, function(){
-                            scope.appliedFamily = obj.family;
+                            scope.info.fontFamily = obj.family;
+                            scope.calculateVarient(varient);
                         });
                     },
                     inactive: function() {},
@@ -59,9 +70,7 @@
         }
         return {
             scope: {
-                data: '=info',
-                appliedFamily: '='
-
+                info: '='
             },
             restrict: 'E',
             templateUrl: 'app/components/googleFontManager/googleFontManager.html',
